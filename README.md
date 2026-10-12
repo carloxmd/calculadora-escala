@@ -1,4 +1,4 @@
-# escala. — V1
+# escala. — v1.0
 
 Calculadora propia para arquitectura, urbanismo y cartografía. HTML, CSS y JavaScript puro: sin bibliotecas, fuentes remotas, servicios, analítica ni instalación. Funciona abriendo `index.html` y también en GitHub Pages.
 
