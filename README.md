@@ -26,23 +26,6 @@ calculadora-escala/
 └── README.md
 ```
 
-## Publicar en GitHub Pages
-
-1. Crea un repositorio en tu cuenta de GitHub.
-2. Sube **el contenido** de esta carpeta a la raíz del repositorio (index.html debe quedar en la raíz).
-3. En Settings → Pages, selecciona Deploy from a branch y la rama que contiene los archivos, carpeta `/ (root)`.
-4. Abre la dirección que GitHub muestra cuando termine la publicación.
-
-Las rutas de CSS y JavaScript son relativas para funcionar también bajo `/nombre-del-repositorio/`. No requiere proceso de compilación ni dependencias externas.
-
-## Arquitectura y próximos módulos
-
-`js/app.js` separa el motor matemático de los eventos y la representación visual. `globalThis.Escala.engine` expone `units`, `presets`, `parse`, `convert`, `toPlan`, `toReal` y `findScale`; `Escala.modules.scale` registra el módulo actual. El motor también se exporta con CommonJS para comprobaciones en Node, aunque Node no es necesario para usar la web.
-
-Futuros módulos pueden vivir en archivos independientes (por ejemplo `js/modules/print.js`) y reutilizar este motor. Para registrarlos, evoluciona el registro de módulos explícito y añade sus paneles y controles accesibles. La V1 no incluye lógica de impresión, edificabilidad, densidad o cabida.
-
-Mantén las reglas urbanísticas separadas del motor de escalas; documenta las unidades de superficie, parámetros, ámbito normativo y supuestos de cada módulo.
-
 ## Diseño y privacidad
 
 Diseño responsive con controles etiquetados, estados de error, resultados anunciados y navegación de pestañas por teclado. Todo se ejecuta localmente y no guarda ni envía las medidas. Implementación original, inspirada en el concepto de conversión de escalas de https://cristianyarasca.com/calculadora-de-escala/; no utiliza código ni recursos de esa página.
