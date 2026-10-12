@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculadora de escala para arquitectura, urbanismo y cartografía. Convierte medidas y encuentra la escala de tus planos.">
+  <title>Escala · Del territorio al papel</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="./" aria-label="Escala, inicio"><span class="brand-mark" aria-hidden="true">↗</span> escala<span class="brand-dot">.</span></a><span class="edition"><b>v1.0</b></span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">ARQUITECTURA / URBANISMO / CARTOGRAFÍA</p><h1>Del territorio al <em>papel.</em></h1><p class="intro-copy">Convierte medidas, encuentra la escala y trabaja con precisión.<br>Una herramienta simple para pensar en cualquier dimensión.</p></section>
+    <section class="workspace" aria-label="Calculadora de escala">
+      <div class="calculator">
+        <div class="tabs" role="tablist" aria-label="Modo de cálculo"><button id="convert-tab" role="tab" aria-selected="true" aria-controls="convert-panel" tabindex="0">01 <span>Convertir medidas</span></button><button id="find-tab" role="tab" aria-selected="false" aria-controls="find-panel" tabindex="-1">02 <span>Encontrar escala</span></button></div>
+        <div id="convert-panel" role="tabpanel" aria-labelledby="convert-tab">
+          <div class="section-heading"><label for="scale">Escala del proyecto</label><span>PERSONALIZADA</span></div>
+          <p id="scale-help" class="find-copy">Indica la escala que te interesa revisar.</p>
+          <div class="scale-entry"><span>1 <i>:</i></span><input id="scale" type="text" inputmode="decimal" value="500" autocomplete="off" aria-describedby="scale-help"><span class="scale-caption">realidad → plano</span></div>
+          <div id="presets" class="presets" aria-label="Escalas frecuentes"></div>
+          <div class="measure-grid"><div class="measure"><label for="real">Medida real</label><div class="input-row"><input id="real" type="text" inputmode="decimal" value="25" autocomplete="off"><select id="real-unit" aria-label="Unidad de medida real"><option>mm</option><option>cm</option><option selected>m</option><option>km</option></select></div><span>En el terreno</span></div><span class="exchange" aria-hidden="true">⇄</span><div class="measure"><label for="plan">Medida en plano</label><div class="input-row"><input id="plan" type="text" inputmode="decimal" value="5" autocomplete="off"><select id="plan-unit" aria-label="Unidad de medida en plano"><option>mm</option><option selected>cm</option><option>m</option><option>km</option></select></div><span>Sobre el papel</span></div></div>
+          <p id="convert-error" class="error" role="status"></p>
+          <div class="result" aria-live="polite"><span class="result-label">EQUIVALENCIA</span><p id="equivalence">1 cm en plano = 5 m reales</p><span id="scale-summary">Escala 1:500 · reducción</span></div>
+        </div>
+        <div id="find-panel" role="tabpanel" aria-labelledby="find-tab" hidden>
+          <div class="section-heading"><h2>Encuentra la relación</h2><span>AUTOMÁTICA</span></div><p class="find-copy">Introduce la medida real indicada en la realidad o la cota, y la medida indicada en el plano</p>
+          <div class="measure-grid"><div class="measure"><label for="known-real">Medida real</label><div class="input-row"><input id="known-real" type="text" inputmode="decimal" value="850"><select id="known-real-unit" aria-label="Unidad real para encontrar escala"><option>mm</option><option>cm</option><option selected>m</option><option>km</option></select></div></div><span class="exchange" aria-hidden="true">÷</span><div class="measure"><label for="known-plan">Medida en plano</label><div class="input-row"><input id="known-plan" type="text" inputmode="decimal" value="17"><select id="known-plan-unit" aria-label="Unidad en plano para encontrar escala"><option>mm</option><option selected>cm</option><option>m</option><option>km</option></select></div></div></div>
+          <p id="find-error" class="error" role="status"></p><div class="result" aria-live="polite"><span class="result-label">ESCALA RESULTANTE</span><p id="found-scale">1:5,000</p><span id="found-equivalence">1 cm en plano = 50 m reales</span></div><button id="use-scale" class="primary">Usar esta escala <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+      <aside class="guide"><p class="eyebrow">LA RELACIÓN, A SIMPLE VISTA</p><div class="drawing" aria-hidden="true"><div class="building"><span></span><span></span><span></span><span></span></div><div class="ground"></div><div class="dimension">← <span>REALIDAD</span> →</div><div class="drawing-arrow">↓</div><div class="small-building"></div><div class="dimension small">← <span>PLANO</span> →</div></div><h2>Una misma distancia.<br>Otra dimensión.</h2><p>En una escala 1:n, cada unidad del plano representa n unidades reales.</p><div class="formula"><span>Real → plano</span><b>medida ÷ n</b></div><div class="formula"><span>Plano → real</span><b>medida × n</b></div><p class="guide-note">Primero igualamos las unidades; después aplicamos la escala.</p></aside>
+    </section>
+    <section class="roadmap" aria-label="Futuros módulos"><div><p class="eyebrow">UN ESPACIO PARA CRECER</p><h2>Herramientas de utilidad para el día a día</h2></div></section>
+  </main>
+  <footer><span>escala. <small>Precisión para tus ideas.</small></span><p>Inspirada en la <a href="https://cristianyarasca.com/calculadora-de-escala/">«Calculadora de escala» de Cristian Yarasca</a>.</p></footer>
+  <noscript>Activa JavaScript para utilizar la calculadora.</noscript>
+</body>
+</html>
